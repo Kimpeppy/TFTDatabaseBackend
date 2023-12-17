@@ -133,13 +133,14 @@ function readMatchjson() {
       for (var j = 0; j < units.length; j++) {
         for (var k = 0; k < 12; k++) {
           if (k >= units[j].length) {
-            tempUnits[j] = '';
+            tempUnits[j][k] = '';
           } else {
             tempUnits[j] = units[j][k].character_id;
           }
         }
 
         const teamID = Math.random().toString(16).substr(2, 225);
+
 
         const teamCompQuery = 'INSERT INTO teamComps (teamID, champion_name1, champion_name2, champion_name3, champion_name4, champion_name5, champion_name6, champion_name7, champion_name8, champion_name9, champion_name10, champion_name11, champion_name12, augment_name1, augment_name2, augment_name3, place) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
 
