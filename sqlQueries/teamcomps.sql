@@ -1,6 +1,5 @@
 CREATE TABLE teamComps (
     teamID VARCHAR(50) PRIMARY KEY,
-    participantID VARCHAR(50),
     champion_name1 VARCHAR(50),
     champion_name2 VARCHAR(50),
     champion_name3 VARCHAR(50),
@@ -15,5 +14,5 @@ CREATE TABLE teamComps (
     champion_name12 VARCHAR(50),
     augment_name1 VARCHAR(50),
     augment_name2 VARCHAR(50),
-    augment_name3 VARCHAR(50)
-)
+    augment_name3 VARCHAR(50),
+    place INT);

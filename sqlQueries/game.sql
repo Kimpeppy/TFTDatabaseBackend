@@ -1,11 +1,12 @@
 CREATE TABLE game (
     gameID VARCHAR(225) PRIMARY KEY,
-    teamComp1 VARCHAR(50),
-    teamComp2 VARCHAR(50),
-    teamComp3 VARCHAR(50),
-    teamComp4 VARCHAR(50),
-    teamComp5 VARCHAR(50),
-    teamComp6 VARCHAR(50),
-    teamComp7 VARCHAR(50),
-    teamComp8 VARCHAR(50),
-)
+    participantID1 VARCHAR(80),
+    participantID2 VARCHAR(80),
+    participantID3 VARCHAR(80),
+    participantID4 VARCHAR(80),
+    participantID5 VARCHAR(80),
+    participantID6 VARCHAR(80),
+    participantID7 VARCHAR(80),
+    participantID8 VARCHAR(80)
+);
+
