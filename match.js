@@ -122,7 +122,7 @@ function readMatchjson() {
 
       connection.query(gameQuery, [gameID, participantIds[0], participantIds[1], participantIds[2], participantIds[3], participantIds[4], participantIds[5], participantIds[6], participantIds[7]], (err, results) => {
           if (err) {
-            console.error("Error inserting data into MySQL:", err);
+            console.error("Error inserting game into MySQL:", err);
           } else {
             console.log(`Inserted game into MySQL`);
           }
@@ -147,7 +147,7 @@ function readMatchjson() {
         connection.query(teamCompQuery, [teamID, tempUnits[0], tempUnits[1], tempUnits[2], tempUnits[3], tempUnits[4], tempUnits[5], tempUnits[6], tempUnits[7], tempUnits[8], tempUnits[9], tempUnits[10], tempUnits[11],
           augments[j][0], augments[j][1], augments[j][2], places[j]], (err, results) => {
             if (err) {
-              console.error("Error inserting data into MySQL:", err);
+              console.error("Error inserting teamComp into MySQL:", err);
             } else {
               console.log(`Inserted teamComp into MySQL`);
             }
@@ -158,7 +158,7 @@ function readMatchjson() {
 
         connection.query(pInGTQuery, [participantIds[j], teamID, gameID], (err, results) => {
           if (err) {
-            console.error("Error inserting data into MySQL:", err);
+            console.error("Error inserting participant into MySQL:", err);
           } else {
             console.log(`Inserted participant into MySQL`);
           }
@@ -186,7 +186,7 @@ function dropCreate() {
 
   connection.query(dropGQuery, (err, results) => {
     if (err) {
-      console.error("Error inserting data into MySQL:", err);
+      console.error("Error dropping G into MySQL:", err);
     } else {
       console.log(`Dropped G`);
     }
@@ -194,7 +194,7 @@ function dropCreate() {
 
   connection.query(dropTQuery, (err, results) => {
     if (err) {
-      console.error("Error inserting data into MySQL:", err);
+      console.error("Error dropping T into MySQL:", err);
     } else {
       console.log(`Dropped T`);
     }
@@ -202,7 +202,7 @@ function dropCreate() {
 
   connection.query(dropPQuery, (err, results) => {
     if (err) {
-      console.error("Error inserting data into MySQL:", err);
+      console.error("Error dropping P into MySQL:", err);
     } else {
       console.log(`Dropped P`);
     }
@@ -210,15 +210,15 @@ function dropCreate() {
 
   connection.query(dropPInGQuery, (err, results) => {
     if (err) {
-      console.error("Error inserting data into MySQL:", err);
+      console.error("Error dropping PI into MySQL:", err);
     } else {
-      console.log(`Dropped P`);
+      console.log(`Dropped PI`);
     }
   });
 
   connection.query(createGQuery, (err, results) => {
     if (err) {
-      console.error("Error inserting data into MySQL:", err);
+      console.error("Error inserting game into MySQL:", err);
     } else {
       console.log(`Inserted game into MySQL`);
     }
