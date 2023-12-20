@@ -5,10 +5,10 @@ const port = 4000;
 const { readMatchjson, dropCreate } = require("./match.js");
 
 const connection = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "mkim225",
+  host: "35.203.116.94",
+  user: "root",
   password: "8bg5f4fz",
-  database: "tftSqlDatabase",
+  database: "tftdatabase",
 });
 
 // Create a route for the API endpoint

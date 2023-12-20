@@ -2,10 +2,10 @@ const mysql = require("mysql2");
 const fs = require('fs');
 
 const connection = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "mkim225",
+  host: "35.203.116.94",
+  user: "root",
   password: "8bg5f4fz",
-  database: "tftSqlDatabase",
+  database: "tftdatabase",
 });
 
 // Connect to MySQL
@@ -23,7 +23,7 @@ connection.connect((err) => {
 function readDragonJson() {
   try {
     // Read the JSON file
-    const rawData = fs.readFileSync('radiant.json');
+    const rawData = fs.readFileSync('jsonFiles/support.json');
     
     // Parse the JSON data
     var items = JSON.parse(rawData);
@@ -37,6 +37,7 @@ function readDragonJson() {
 }
 
 var items = readDragonJson();
+
 
 for (const item of items) {
   const apiName = item.apiName;
