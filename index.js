@@ -1,5 +1,11 @@
 const express = require("express");
+const cors = require("cors");
+
+const corsOptions = {
+  origin: '*',
+};
 const app = express();
+app.use(cors(corsOptions));
 const mysql = require("mysql2");
 const port = 4000;
 const { readMatchjson, dropCreate } = require("./match.js");
@@ -193,7 +199,7 @@ app.get("/api/select/champion", (req, res) => {
   });
 });
 
-// http://localhost:4000/api/select/cost?cost[0]=_&cost[1]_...
+// api/select/cost?cost[0]=_&cost[1]_...
 app.get("/api/select/cost", (req, res) => {
   // Connect to MySQL
   connection.connect((err) => {
@@ -234,7 +240,7 @@ app.get("/api/select/cost", (req, res) => {
   });
 });
 
-// http://localhost:4000/api/select/cost?origin[0]=_&origin[1]_...
+// /api/select/cost?origin[0]=_&origin[1]_...
 app.get("/api/select/origin", (req, res) => {
   // Connect to MySQL
   connection.connect((err) => {
@@ -272,7 +278,7 @@ app.get("/api/select/origin", (req, res) => {
   });
 });
 
-// http://localhost:4000/api/select/cost?class[0]=_&class[1]_...
+//  /api/select/cost?class[0]=_&class[1]_...
 app.get("/api/select/class", (req, res) => {
   // Connect to MySQL
   connection.connect((err) => {
@@ -310,7 +316,7 @@ app.get("/api/select/class", (req, res) => {
   });
 });
 
-// http://localhost:4000/api/select/cost?origin[0]=_&class[0]_&cost[0]_...
+//  /api/select/cost?origin[0]=_&class[0]_&cost[0]_...
 app.get("/api/select/COC", (req, res) => {
   // Connect to MySQL
   connection.connect((err) => {
@@ -369,7 +375,7 @@ app.get("/api/select/COC", (req, res) => {
   });
 });
 
-// http://localhost:4000/api/select/cost?pID = participantID & place = 1...
+//  /api/select/cost?pID = participantID & place = 1...
 app.get("/api/select/showGbyP", (req, res) => {
   // Connect to MySQL
   connection.connect((err) => {
@@ -408,7 +414,7 @@ app.get("/api/select/showGbyP", (req, res) => {
   });
 });
 
-// http://localhost:4000/api/select/cost?pID = participantID & champion[0]=_...
+//  /api/select/cost?pID = participantID & champion[0]=_...
 app.get("/api/select/showGbyC", (req, res) => {
   // Connect to MySQL
   connection.connect((err) => {
